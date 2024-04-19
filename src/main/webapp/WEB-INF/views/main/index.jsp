@@ -173,7 +173,7 @@
 		<div id="ta3">
 		[자주 찾는 질문]
 		<br><br>	
-		<article >
+		<article >    
 		<c:forEach var="vo"  items="${ faq_list }" >
 	   		<div id="newsbox2">
             <div id="newstitle2"><a href="support/faq_view.do?f_idx=${vo.f_idx}">${ vo.f_subject }</a></div>
