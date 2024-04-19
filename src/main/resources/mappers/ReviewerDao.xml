@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.movie.filmmatch.support.dao.ReviewerDao">
+	
+	<!-- 페이지에 따른 목록조회 -->
+	<select id="selectList" resultType="reviewer">
+		select * from reviewer
+		order by r_ref desc, r_step asc
+	</select>
+
+	<!-- 평론글 검색 조회 -->
+	<select id="selectConditionList" parameterType="Map" resultType="reviewer">
+		
+		select * from
+		(
+			select
+				s.*,rank() over(order by r_idx desc) as r_no
+			from
+			(
+			  select * from reviewer
+			  <trim prefix="where" prefixOverrides="or"><!--prefixOverrides: 프리픽스재정의=or는 또는  -->
+		   	
+		   		<if test="name!=null">
+		   			mem_name like  concat( '%', #{ name }, '%' )
+		   		</if>
+		   		
+		   		<if test="subject!=null"> 
+		   		 or	r_subject like  concat( '%', #{ subject }, '%' )
+		   		</if>
+		   		
+		   		<if test="content!=null"> 
+		   		 or r_content like  concat( '%', #{ content }, '%' )
+		   		</if>
+			  </trim>
+			) s
+		) ss
+		where r_no between #{ start } and #{ end }
+	
+	</select>
+
+	<!-- 조건별 검색된 게시물 수 -->
+    <select id="selectConditionRowTotal" parameterType="Map" resultType="int">
+		
+		select 
+			ifnull(count(*),0) 
+		from
+		(
+			select * from reviewer
+			<trim prefix="where" prefixOverrides="or"><!--prefixOverrides: 프리픽스재정의=or는 또는  -->
+				
+					
+					<if test="name!=null">
+						mem_name like  concat( '%', #{ name }, '%' )
+					</if>
+					<if test="subject!=null"> 
+					or r_subject like  concat( '%', #{ subject }, '%' )
+					</if>
+					<if test="content!=null"> 
+					or r_content like  concat( '%', #{ content }, '%' )
+					</if>
+			</trim>
+		) s
+		
+		
+	</select>
+
+	<!-- 페이지에 1개 조회 -->
+	<select id="selectOne"  parameterType="int" resultType="reviewer">
+		select * from reviewer where r_idx=#{ r_idx }
+	</select>
+
+	
+	<!-- 평론글남기기(글쓰기) -->
+	<insert id="insert"  parameterType="reviewer">
+       insert into reviewer(r_idx, r_subject, mem_idx, mem_name, r_content, r_regdate) 
+                   values(#{r_idx},#{ r_subject } ,#{ mem_idx },#{ mem_name } , #{ r_content } , now())
+    </insert>
+
+	<!-- 평론글삭제 -->
+    <delete id="delete" parameterType="int">
+       delete from reviewer where r_idx = #{ r_idx }
+    </delete>
+
+	<!-- 평론글수정 -->
+	<update id="update" parameterType="reviewer">
+    
+       update reviewer set r_subject = #{ r_subject },
+                      r_content = #{ r_content },
+                      r_ip = #{ r_ip },
+                      r_regdate=now()
+     where r_idx = #{ r_idx } 
+	 </update>
+
+	  <!-- 조회수 증가 -->
+	<update id="update_readhit" parameterType="int">
+		update reviewer set r_readhit = r_readhit+1 where r_idx = #{r_idx}
+	</update>       
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
