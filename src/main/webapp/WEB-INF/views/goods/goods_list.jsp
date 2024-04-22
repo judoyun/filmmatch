@@ -53,7 +53,7 @@ $(document).ready(function(){
 
 <body>
 
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
 	
 	<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
      
@@ -115,6 +115,6 @@ $(document).ready(function(){
 		
 	</div>
 
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 </body>
 </html>

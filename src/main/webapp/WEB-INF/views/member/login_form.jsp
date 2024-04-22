@@ -209,7 +209,8 @@ function kakaoLogout() {
 <body>
     <header id="header">
         <!-- <a href="../index.do"><span class="film">Film</span><span class="match">Match</span>&emsp;</a> -->
-        <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+        <%-- <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/> --%>
+        <%@ include file="../main/header.jsp"  %>
     </header>
 
     <div class="container">

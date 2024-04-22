@@ -65,7 +65,7 @@
 
 
 <!-- Header -->
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+		<%@ include file="../main/header.jsp"  %>
 
   	<div id="genrebox">
     <a id="gencate" href="genre.do">장르별&ensp; |</a>
@@ -109,6 +109,6 @@
 
 
 
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 
 </body></html>

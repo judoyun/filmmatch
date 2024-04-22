@@ -150,7 +150,7 @@
 <body>
 
 	<!-- Header -->
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
 	<section id="one">
 		<div class="container">
 			<div class="row">
@@ -235,7 +235,7 @@
 
 
 	</section>
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 </body>
 
 </html>

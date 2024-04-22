@@ -168,8 +168,7 @@ const check_count =$("input[name='cart_idx']:checked").length;
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
 <title>결제</title></head>
 
 <body>
@@ -272,6 +271,6 @@ const check_count =$("input[name='cart_idx']:checked").length;
 		</div>	
 		</form>
 </section>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 </body>
 </html>

@@ -250,7 +250,7 @@ function photo_upload() {
 
 </head>
 <body>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
 	
 
 
@@ -353,6 +353,6 @@ function photo_upload() {
 </div>
 </div>
 </section>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 </body>
 </html>

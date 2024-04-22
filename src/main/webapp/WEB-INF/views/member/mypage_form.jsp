@@ -12,7 +12,7 @@
 <body>
 
 <!-- Header -->
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
 
 <section id="main"><div class="inner">
         <header class="major special"><h1>Mypage</h1>
@@ -48,7 +48,7 @@
 
     </div>
 </section>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 <!-- Scripts -->
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/skel.min.js"></script>

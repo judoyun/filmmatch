@@ -129,8 +129,7 @@ form.example::after {
 </head>
 <body>
 
-<!-- Header -->
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+<!-- Header -->	<%@ include file="../main/header.jsp"  %>
 
 <section id="one">
 			<div class="container" style="border: 1px solid transparent;">
@@ -336,8 +335,7 @@ form.example::after {
 		</div>
 			
     
-  </section>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+  </section><%@ include file="../main/footer.jsp" %>
 </body>
 </html>
 

@@ -81,8 +81,8 @@
 <body>
 
 
-<!-- Header -->
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+<!-- Header -->	
+<%@ include file="../main/header.jsp"  %>
 
 <section id="main">
     <div class="inner">
@@ -202,7 +202,7 @@
 
 
 
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp"%>
 <!-- Scripts -->
 <!-- <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/skel.min.js"></script>

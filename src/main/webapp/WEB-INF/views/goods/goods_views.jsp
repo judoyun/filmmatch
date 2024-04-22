@@ -193,8 +193,7 @@ function adjustDiv3Position() {
     }
 </script>
 <body>
-
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp" />
+	<%@ include file="../main/header.jsp"  %>
 	<div class="flex-container">
 	
 	<div class="goods_views_box">
@@ -305,6 +304,6 @@ function adjustDiv3Position() {
 	</section>
 	</div>
 	</div>
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp" />
+<%@ include file="../main/footer.jsp" %>
 </body>
 </html>

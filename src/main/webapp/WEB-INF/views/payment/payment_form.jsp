@@ -255,8 +255,7 @@ $(document).ready(function() {
 <title>결제</title></head>
 
 <body>
-
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
 
 <section id="one">
 <div class="inner">
@@ -395,6 +394,6 @@ $(document).ready(function() {
 
 		</div>
 </section>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 </body>
 </html>

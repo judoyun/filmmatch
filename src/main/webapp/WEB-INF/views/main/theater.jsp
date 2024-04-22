@@ -72,7 +72,7 @@
 									<span>지도를 마우스로 클릭하면 원 그리기가 시작되고, 오른쪽 마우스를 클릭하면 원 그리기가 종료됩니다.</span> 
 								</div>
 								<div id="rosebox"width=100%; height=800px; magin="auto;">
-								<div id="store_display"></div><iframe id="ifra" src="http://place.map.kakao.com/10609442" width=810px; height=780px; float=left; frameborder="0"></iframe></div>					  	
+								<div id="store_display"></div><iframe id="ifra" src="https://place.map.kakao.com/10609442" width=810px; height=780px; float=left; frameborder="0"></iframe></div>					  	
 						</div>
 						
    						<br>  
@@ -93,6 +93,6 @@
 
 
      
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@  include file="../main/footer.jsp" %>
     </body>
     </html>

@@ -73,7 +73,7 @@ font-size: 25px;
 <body>
 
 <!-- Header -->
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
     <div id="genrebox">
 	<a id="gencate" href="genre.do">장르별&ensp; |</a>
 	<a id="gencate2" href="nation.do">나라별 &ensp;|</a>
@@ -182,6 +182,6 @@ font-size: 25px;
 
 </div>
 
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 
 </body></html>

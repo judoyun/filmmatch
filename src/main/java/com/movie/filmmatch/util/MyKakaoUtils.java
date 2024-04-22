@@ -63,6 +63,7 @@ public class MyKakaoUtils{
                 String phone = theater.getString("phone");
                 String place_name = theater.getString("place_name");
                 String place_url = theater.getString("place_url");
+                place_url = place_url.replace("http:", "https:");
                 String road_address_name = theater.getString("road_address_name");
                 double x = theater.getDouble("x");
                 double y = theater.getDouble("y");

@@ -74,7 +74,7 @@ font-weight: bold; /* 글자를 굵게 만듭니다 */
 </script>
 </head>
 <body>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
 
 
 <section id="one" class="">
@@ -120,7 +120,7 @@ ${vo.goods_name}<br>
 
 
 
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 </body>
 </html>
 

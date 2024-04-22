@@ -171,8 +171,8 @@ textarea{
    
   }
 </style>
-<!-- Header -->
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+<!-- Header -->	
+<%@ include file="../main/header.jsp"  %>
 <%
     // 리스트에서 '36'이 포함된 playing 객체의 개수를 저장할 변수
     int count = 0;
@@ -230,7 +230,7 @@ textarea{
 </div>
 
 <div style="width:1200px; height:100px; margin:auto;margin-top:5px;"></div>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 
 
 

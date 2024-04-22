@@ -110,7 +110,7 @@ margin: 0 auto;
 </script>
 </head>
 <body>
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/header.jsp"/>
+	<%@ include file="../main/header.jsp"  %>
 
 
 <section id="one" class="">
@@ -192,7 +192,7 @@ margin: 0 auto;
 
 
 
-<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/main/footer.jsp"/>
+<%@ include file="../main/footer.jsp" %>
 </body>
 </html>
 
